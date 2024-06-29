@@ -43,7 +43,7 @@ const Register = () => {
           <form>
             <div className={classes.profile_photo}>
               <label>
-                <img src={avatar ? `http://localhost:8080/uploads/${avatar}` :user} alt="" />
+                <img src={avatar ? `https://airbnbbackend1.vercel.app/uploads/${avatar}` :user} alt="" />
                 <input type="file" name="" onChange={(e) => handleUpload(e)} />
               </label>
               <p>Upload photo</p>

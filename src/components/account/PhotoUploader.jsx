@@ -35,7 +35,7 @@ const PhotoUploader = ({
             // const [mainPhoto, setMainPhoto] = useState(false);
             return (
               <div key={index} className={classes.place_img}>
-                <img src={"http://localhost:8080/uploads/" + link} alt="" />
+                <img src={"https://airbnbbackend1.vercel.app/uploads/" + link} alt="" />
                 <div
                   className={classes.remove_icon}
                   onClick={() => removePhoto(link)}

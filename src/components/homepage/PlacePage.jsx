@@ -55,7 +55,7 @@ const PlacePage = () => {
               window.scrollTo({ top: 0, behavior: "smooth" });
               setShowAllImage(true);
             }}
-            src={"http://localhost:8080/uploads/" + place?.photos?.[0]}
+            src={"https://airbnbbackend1.vercel.app/uploads/" + place?.photos?.[0]}
             alt=""
           />
           <div>
@@ -64,7 +64,7 @@ const PlacePage = () => {
                 window.scrollTo({ top: 0, behavior: "smooth" });
                 setShowAllImage(true);
               }}
-              src={"http://localhost:8080/uploads/" + place?.photos?.[1]}
+              src={"https://airbnbbackend1.vercel.app/uploads/" + place?.photos?.[1]}
               alt=""
             />
             <img
@@ -72,7 +72,7 @@ const PlacePage = () => {
                 window.scrollTo({ top: 0, behavior: "smooth" });
                 setShowAllImage(true);
               }}
-              src={"http://localhost:8080/uploads/" + place?.photos?.[2]}
+              src={"https://airbnbbackend1.vercel.app/uploads/" + place?.photos?.[2]}
               alt=""
             />
             <p
@@ -128,7 +128,7 @@ const PlacePage = () => {
             <hr color="#f1f1f1" />
             <div className={classes.host_info}>
               <img
-                src={host?.avatar ? `http://localhost:8080/uploads/${host?.avatar}` : defaultPfp }
+                src={host?.avatar ? `https://airbnbbackend1.vercel.app/uploads/${host?.avatar}` : defaultPfp }
                 alt=""
               />
               <div>
