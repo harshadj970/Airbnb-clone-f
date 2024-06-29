@@ -170,7 +170,7 @@ const PlacePage = () => {
           <div>
             {place?.photos?.map((photo) => {
               return (
-                <img src={`http://localhost:8080/uploads/${photo}`} alt="" />
+                <img src={`https://airbnbbackend1.vercel.app/uploads/${photo}`} alt="" />
               );
             })}
           </div>
