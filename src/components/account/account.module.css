@@ -1,0 +1,32 @@
+.options {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  justify-content: center;
+}
+.options a {
+  color: black;
+  font-weight: 500;
+  border-radius: 3rem;
+  padding: 0.3rem 1rem;
+}
+.active {
+  background-color: #ff385c;
+  color: white !important;
+}
+.inactive{
+  background-color: rgba(128, 128, 128, 0.2);
+}
+.profile a,.bookings a,.places a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+}
+.options svg{
+  width: 1.3rem;
+}
+.options p{
+  margin: 0;
+}

@@ -1,0 +1,21 @@
+.profile{
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+.profile p{
+  margin: 0;
+  font-weight: 500;
+}
+.profile button{
+  border: none;
+  background-color: #ff385c;
+  font-size: 1.2rem;
+  width: 100%;
+  border-radius: 2rem;
+  padding: 0.4rem 1rem;
+  margin-top: 0.5rem;
+  color: white;
+  cursor: pointer;
+}

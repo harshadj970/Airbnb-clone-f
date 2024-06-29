@@ -1,0 +1,31 @@
+.places{
+  margin: 1rem auto;
+  padding-inline: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  gap: 1rem;
+}
+.place{
+  padding: 0.3rem;
+  cursor: pointer;
+}
+.place img{
+  width: 100%;
+  aspect-ratio:1/0.8;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: center;
+}
+.place p:last-of-type{
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+.place p:nth-of-type(2){
+  color: #6a6a6a;
+  font-weight: 350;
+  font-size: 0.9rem;
+}
+.place p:nth-of-type(1),.place p span{
+  color: #222222;
+  font-weight: 500;
+}

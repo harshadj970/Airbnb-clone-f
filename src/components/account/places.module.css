@@ -1,0 +1,162 @@
+.add_place_btn,
+.save {
+  margin-inline: auto;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #ff385c;
+  border: none;
+  border-radius: 2rem;
+  gap: 0.3rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.add_place_btn svg {
+  width: 1.4rem;
+}
+.add_place_btn a {
+  color: white;
+}
+.add_place_btn p {
+  min-width: fit-content;
+}
+.places p {
+  margin: 0;
+}
+.add_place_form {
+  margin: 1.5rem 2rem;
+}
+.add_place_form p,
+h2 {
+  margin: 0;
+}
+.add_place_form input,
+textarea {
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  border-radius: 0.3rem;
+  width: 100%;
+}
+.add_place_form textarea {
+  resize: none;
+}
+.add_place_form h2 {
+  margin-top: 1rem;
+  font-weight: 600;
+}
+.add_place_form .add_photo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.add_photo button {
+  border: none;
+  padding: 0.3rem 0.6rem;
+  background-color: rgba(128, 128, 128, 0.3);
+  min-width: fit-content;
+  font-size: 1.2rem;
+  border-radius: 0.3rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.upload {
+  cursor: pointer;
+  margin-block: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
+  gap: 1rem;
+}
+.upload div img {
+  border-radius: 0.5rem;
+  aspect-ratio: 3/2;
+  max-width: 250px;
+  object-fit: cover;
+  background-position: center;
+}
+.place_img{
+  position: relative;
+}
+.place_img .remove_icon{
+  position: absolute;
+  bottom: 0.4rem;
+  right: 0.5rem;
+  color: white;
+  backdrop-filter: blur(3px);
+  border-radius: 4px;
+}
+.place_img .star_icon{
+  position: absolute;
+  bottom: 0.4rem;
+  left: 0.5rem;
+  font-size: max(1.1rem,1.2vw);
+  color: white;
+  backdrop-filter: blur(3px);
+  border-radius: 4px;
+}
+.upload_option {
+  height: 98%;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  display: flex;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  gap: 0.5rem;
+}
+.upload_option input {
+  display: none;
+}
+.upload svg {
+  width: 1.5rem;
+}
+.upload p {
+  font-size: 1.3rem;
+}
+.perks {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.perks input {
+  width: fit-content;
+  accent-color: #ff385c;
+}
+.perks label {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  border-radius: 0.5rem;
+}
+.perks label svg {
+  width: 1.5rem;
+}
+.perks label p {
+  font-size: 1.2rem;
+}
+.timings {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+.timings p,.living_space p {
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+.timings input {
+  width: 90%;
+}
+.save {
+  width: 40%;
+  border-radius: 0.5rem;
+}
+.living_space {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
