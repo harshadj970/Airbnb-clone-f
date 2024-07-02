@@ -17,6 +17,7 @@ const Login = () => {
         { withCredentials: true }
       );
       navigate('/');
+      console.log(response.data);
       setUser(response.data);
       alert("login successful");
     } catch (error) {

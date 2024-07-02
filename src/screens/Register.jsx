@@ -11,7 +11,7 @@ const Register = () => {
   const [avatar, setAvatar] = useState();
   const handleRegister = async function () {
     try {
-      await axios.post("/register", { name, email, password,avatar });
+      await axios.post("/register", { name, email, password, avatar });
       alert("registration successful");
     } catch (error) {
       alert("try again later...");
@@ -31,9 +31,9 @@ const Register = () => {
         setAvatar(res.data.filename);
       });
   };
-  useEffect(()=>{
+  useEffect(() => {
     console.log(avatar);
-  },[avatar])
+  }, [avatar]);
   return (
     <>
       <Navbar />
@@ -43,7 +43,14 @@ const Register = () => {
           <form>
             <div className={classes.profile_photo}>
               <label>
-                <img src={avatar ? `https://airbnbbackend1.vercel.app/uploads/${avatar}` :user} alt="" />
+                <img
+                  src={
+                    avatar
+                      ? `https://airbnb-clone-backend-b14p.onrender.com/uploads/${avatar}`
+                      : user
+                  }
+                  alt=""
+                />
                 <input type="file" name="" onChange={(e) => handleUpload(e)} />
               </label>
               <p>Upload photo</p>

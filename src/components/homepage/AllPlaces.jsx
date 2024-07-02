@@ -1,14 +1,18 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import classes from "./allplaces.module.css";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../../contex/UserContex";
 
 const AllPlaces = () => {
   const [places, setPlaces] = useState([]);
+  const { user } = useContext(UserContext);
   useEffect(() => {
-    axios.get("/places").then(({ data }) => {
-      setPlaces(data);
-    });
+    axios
+      .get("/places", { headers: { Authorization: user?.token } })
+      .then(({ data }) => {
+        setPlaces(data);
+      });
   }, []);
   return (
     <>
@@ -16,16 +20,21 @@ const AllPlaces = () => {
         {places.map((place) => {
           return (
             <>
-            <Link to={'place/'+place._id}>
-              <div className={classes.place}>
-                <img
-                  src={"https://airbnbbackend1.vercel.app/uploads/" + place?.photos[0]}
-                  alt=""
-                />
-                <p>{place.address}</p>
-                <p>{place.title}</p>
-                <p><span>₹ {place.price}</span> per night</p>
-              </div>
+              <Link to={"place/" + place._id}>
+                <div className={classes.place}>
+                  <img
+                    src={
+                      "https://airbnb-clone-backend-b14p.onrender.com/uploads/" +
+                      place?.photos[0]
+                    }
+                    alt=""
+                  />
+                  <p>{place.address}</p>
+                  <p>{place.title}</p>
+                  <p>
+                    <span>₹ {place.price}</span> per night
+                  </p>
+                </div>
               </Link>
             </>
           );

@@ -14,7 +14,7 @@ const PhotoUploader = ({
   const setMainPhoto = (link) => {
     const removedImg = addedPhotos.shift();
     addedPhotos.push(removedImg);
-    setAddedPhotos([link,...addedPhotos.filter((photo)=>photo!=link)]);
+    setAddedPhotos([link, ...addedPhotos.filter((photo) => photo != link)]);
   };
   return (
     <>
@@ -35,7 +35,13 @@ const PhotoUploader = ({
             // const [mainPhoto, setMainPhoto] = useState(false);
             return (
               <div key={index} className={classes.place_img}>
-                <img src={"https://airbnbbackend1.vercel.app/uploads/" + link} alt="" />
+                <img
+                  src={
+                    "https://airbnb-clone-backend-b14p.onrender.com/uploads/" +
+                    link
+                  }
+                  alt=""
+                />
                 <div
                   className={classes.remove_icon}
                   onClick={() => removePhoto(link)}

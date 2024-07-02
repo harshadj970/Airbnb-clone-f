@@ -1,11 +1,12 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import classes from "./places.module.css";
 import PhotoUploader from "./PhotoUploader";
 import Perks from "./Perks";
 import Navbar from "../homepage/Navbar";
 import AccountNav from "./AccountNav";
+import { UserContext } from "../../../contex/UserContex";
 const PlacesFormPage = () => {
   const [title, setTitle] = useState("");
   const [address, setAddress] = useState("");
@@ -22,6 +23,7 @@ const PlacesFormPage = () => {
   const [bathroom,setBathroom]=useState(1);
   const navigate = useNavigate();
   const { id } = useParams();
+  const {user}=useContext(UserContext);
   useEffect(() => {
     if (!id) {
       return;
@@ -63,6 +65,10 @@ const PlacesFormPage = () => {
       await axios.put("/places", {
         id,
         ...data,
+      },{
+        headers:{
+          'Authorization': user.token
+        }
       });
     } else {
       await axios.post("/places", {

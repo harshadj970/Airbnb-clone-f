@@ -1,23 +1,25 @@
 import { Route, Routes } from "react-router-dom";
-import './app.css'
+import "./app.css";
 import Home from "./screens/Home";
 import Login from "./screens/Login";
 import Register from "./screens/Register";
 import axios from "axios";
 import Account from "./screens/Account";
-import { useContext ,useEffect} from "react";
+import { useContext, useEffect } from "react";
 import { UserContext } from "../contex/UserContex";
 import Places from "./components/account/Places";
 import PlacesFormPage from "./components/account/PlacesFormPage";
 import PlacePage from "./components/homepage/PlacePage";
 
-axios.defaults.baseURL = "https://airbnbbackend1.vercel.app";
-axios.defaults.withCredentials=true;
+axios.defaults.baseURL = "https://airbnb-clone-backend-b14p.onrender.com";
+axios.defaults.withCredentials = true;
 function App() {
-  const { setUser,setReady } = useContext(UserContext);
-  useEffect( () => {
-     axios.get("/profile").then((res) => setUser(res.data));
-     setReady(true);
+  const { setUser, setReady, user } = useContext(UserContext);
+  useEffect(() => {
+    axios
+      .get("/profile", { headers: { Authorization: user?.token } })
+      .then((res) => setUser(res.data));
+    setReady(true);
   }, []);
 
   return (
@@ -30,7 +32,7 @@ function App() {
         <Route path="/account/places" element={<Places />} />
         <Route path="/account/places/new" element={<PlacesFormPage />} />
         <Route path="/account/places/:id" element={<PlacesFormPage />} />
-        <Route path="/place/:id" element={< PlacePage/>} />
+        <Route path="/place/:id" element={<PlacePage />} />
       </Routes>
     </>
   );

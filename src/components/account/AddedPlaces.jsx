@@ -1,31 +1,41 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import classes from "./addedplaces.module.css";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../../contex/UserContex";
+
 const AddedPlaces = () => {
   const [places, setPlaces] = useState([]);
+  const { user } = useContext(UserContext);
   useEffect(() => {
-    axios.get("/user-places").then(({ data }) => setPlaces(data));
-    console.log(places);
+    axios
+      .get("/user-places", { headers: { Authorization: user.token } })
+      .then(({ data }) => setPlaces(data));
   }, []);
   return (
     <>
-    <div className={classes.added_places}>
-      {places.length > 0 &&
-        places.map((place) => {
-          return (
-            <Link to={'/account/places/'+place._id}>
-              <div className={classes.place}>
-                <img src={'https://airbnbbackend1.vercel.app/uploads/'+place.photos[0]} alt="" />
-                <div className={classes.place_info}>
-                <h2>{place.title}</h2>
-                <p>{place.description}</p>
+      <div className={classes.added_places}>
+        {places.length > 0 &&
+          places.map((place) => {
+            return (
+              <Link to={"/account/places/" + place._id}>
+                <div className={classes.place}>
+                  <img
+                    src={
+                      "https://airbnb-clone-backend-b14p.onrender.com/uploads/" +
+                      place.photos[0]
+                    }
+                    alt=""
+                  />
+                  <div className={classes.place_info}>
+                    <h2>{place.title}</h2>
+                    <p>{place.description}</p>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          );
-        })}
-        </div>
+              </Link>
+            );
+          })}
+      </div>
     </>
   );
 };

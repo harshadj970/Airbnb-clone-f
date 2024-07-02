@@ -56,7 +56,10 @@ const Navbar = () => {
             </svg>
           </div>
           {user?.avatar ? (
-            <img src={`https://airbnbbackend1.vercel.app/uploads/${user.avatar}`} alt="" />
+            <img
+              src={`https://airbnb-clone-backend-b14p.onrender.com/uploads/${user.avatar}`}
+              alt=""
+            />
           ) : (
             <div>
               <svg

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "./Navbar";
 import classes from "./placepage.module.css";
-import defaultPfp from '../../assets/default_user.png'
+import defaultPfp from "../../assets/default_user.png";
 const PlacePage = () => {
   const { id } = useParams();
   const [place, setPlace] = useState({});
@@ -55,7 +55,10 @@ const PlacePage = () => {
               window.scrollTo({ top: 0, behavior: "smooth" });
               setShowAllImage(true);
             }}
-            src={"https://airbnbbackend1.vercel.app/uploads/" + place?.photos?.[0]}
+            src={
+              "https://airbnb-clone-backend-b14p.onrender.com/uploads/" +
+              place?.photos?.[0]
+            }
             alt=""
           />
           <div>
@@ -64,7 +67,10 @@ const PlacePage = () => {
                 window.scrollTo({ top: 0, behavior: "smooth" });
                 setShowAllImage(true);
               }}
-              src={"https://airbnbbackend1.vercel.app/uploads/" + place?.photos?.[1]}
+              src={
+                "https://airbnb-clone-backend-b14p.onrender.com/uploads/" +
+                place?.photos?.[1]
+              }
               alt=""
             />
             <img
@@ -72,7 +78,10 @@ const PlacePage = () => {
                 window.scrollTo({ top: 0, behavior: "smooth" });
                 setShowAllImage(true);
               }}
-              src={"https://airbnbbackend1.vercel.app/uploads/" + place?.photos?.[2]}
+              src={
+                "https://airbnb-clone-backend-b14p.onrender.com/uploads/" +
+                place?.photos?.[2]
+              }
               alt=""
             />
             <p
@@ -128,7 +137,11 @@ const PlacePage = () => {
             <hr color="#f1f1f1" />
             <div className={classes.host_info}>
               <img
-                src={host?.avatar ? `https://airbnbbackend1.vercel.app/uploads/${host?.avatar}` : defaultPfp }
+                src={
+                  host?.avatar
+                    ? `https://airbnb-clone-backend-b14p.onrender.com/uploads/${host?.avatar}`
+                    : defaultPfp
+                }
                 alt=""
               />
               <div>
@@ -143,7 +156,7 @@ const PlacePage = () => {
             </div>
             <hr color="#f1f1f1" />
             <div className={classes.meet_host}>
-<h2>Meet your host</h2>
+              <h2>Meet your host</h2>
             </div>
           </div>
         </div>
@@ -170,7 +183,10 @@ const PlacePage = () => {
           <div>
             {place?.photos?.map((photo) => {
               return (
-                <img src={`https://airbnbbackend1.vercel.app/uploads/${photo}`} alt="" />
+                <img
+                  src={`https://airbnb-clone-backend-b14p.onrender.com/uploads/${photo}`}
+                  alt=""
+                />
               );
             })}
           </div>
