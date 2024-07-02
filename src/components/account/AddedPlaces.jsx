@@ -6,6 +6,7 @@ const AddedPlaces = () => {
   const [places, setPlaces] = useState([]);
   useEffect(() => {
     axios.get("/user-places").then(({ data }) => setPlaces(data));
+    console.log(places);
   }, []);
   return (
     <>

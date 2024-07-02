@@ -16,7 +16,7 @@ const PlacePage = () => {
         id: data.owner,
       };
       axios
-        .get("/user", {
+        .get("/user/", {
           params: host,
         })
         .then(({ data }) => {
