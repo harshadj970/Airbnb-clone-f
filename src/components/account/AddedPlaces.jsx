@@ -9,7 +9,7 @@ const AddedPlaces = () => {
   const { user } = useContext(UserContext);
   useEffect(() => {
     axios
-      .get("/user-places", { headers: { Authorization: user.token } })
+      .get("/user-places", { headers: { "Authorization": user.token } })
       .then(({ data }) => setPlaces(data));
   }, []);
   return (
