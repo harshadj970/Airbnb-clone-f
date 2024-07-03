@@ -7,6 +7,7 @@ import { UserContext } from "../../../contex/UserContex";
 const AllPlaces = () => {
   const [places, setPlaces] = useState([]);
   const { user } = useContext(UserContext);
+  console.log(user);
   useEffect(() => {
     axios
       .get("/places", { headers: { Authorization: user?.token } })
