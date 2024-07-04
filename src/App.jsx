@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     axios
       .get("/profile", {
-        headers: { Authorization: document.cookie.replace("token=", "") },
+        headers: { Authorization: localStorage.getItem('token') },
       })
       .then((res) => setUser(res.data));
     setReady(true);

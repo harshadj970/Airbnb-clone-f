@@ -7,6 +7,7 @@ const Profile = () => {
   const { user, setUser } = useContext(UserContext);
   const navigate = useNavigate();
   const handleLogout = async () => {
+    localStorage.clear();
     await axios.post("/logout");
     setUser(null);
     navigate("/");
