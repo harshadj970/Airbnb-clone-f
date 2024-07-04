@@ -28,7 +28,7 @@ const Register = () => {
         },
       })
       .then((res) => {
-        setAvatar(res.data.filename);
+        setAvatar(res.data.url);
       });
   };
   useEffect(() => {
