@@ -11,7 +11,7 @@ import Places from "./components/account/Places";
 import PlacesFormPage from "./components/account/PlacesFormPage";
 import PlacePage from "./components/homepage/PlacePage";
 
-axios.defaults.baseURL = "http://localhost:8080";
+axios.defaults.baseURL = "https://airbnb-clone-backend-b14p.onrender.com";
 axios.defaults.withCredentials = true;
 function App() {
   const { setUser, setReady, user } = useContext(UserContext);
