@@ -21,6 +21,8 @@ const PlacesFormPage = () => {
   const [price,setPrice]=useState();
   const [bedroom,setBedroom]=useState(1);
   const [bathroom,setBathroom]=useState(1);
+  const [neighbourhood,setNeighbourhood]=useState('');
+  const [aboutOwner,setAboutOwner]=useState('');
   const navigate = useNavigate();
   const { id } = useParams();
   const {user}=useContext(UserContext);
@@ -42,6 +44,8 @@ const PlacesFormPage = () => {
       setPrice(data.price);
       setBathroom(data.bathrooms);
       setBedroom(data.bedrooms);
+      setAboutOwner(data.aboutOwner);
+      setNeighbourhood(data.neighbourhood);
     });
   }, [id]);
 
@@ -59,7 +63,9 @@ const PlacesFormPage = () => {
       maxGuests,
       price,
       bedroom,
-      bathroom
+      bathroom,
+      neighbourhood,
+      aboutOwner
     };
     if (id) {
       await axios.put("/places", {
@@ -67,12 +73,16 @@ const PlacesFormPage = () => {
         ...data,
       },{
         headers:{
-          'Authorization': user.token
+          Authorization: user?.token
         }
       });
     } else {
       await axios.post("/places", {
         ...data,
+      },{
+        headers:{
+          Authorization:user?.token
+        }
       });
     }
     navigate("/account/places");
@@ -91,11 +101,10 @@ const PlacesFormPage = () => {
         },
       })
       .then((res) => {
-        const { data: files } = res;
-        console.log(files[0].filename);
-        const filenames = files.map((file) => file.filename);
-        setAddedPhotos((prev) => {
-          return [...prev, ...filenames];
+        const { data } = res;
+        console.log(data);
+        data.forEach((item)=>{
+          setAddedPhotos((prev)=>[...prev,item?.url])
         });
       });
   };
@@ -148,6 +157,13 @@ const PlacesFormPage = () => {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           ></textarea>
+          <h2>About owner</h2>
+          <p>description of the owner</p>
+          <textarea
+            rows={3}
+            value={aboutOwner}
+            onChange={(e) => setAboutOwner(e.target.value)}
+          ></textarea>
           <h2>Perks</h2>
           <p>select all the perks of your place</p>
           <div className={classes.perks}>
@@ -159,6 +175,13 @@ const PlacesFormPage = () => {
             rows={3}
             value={extraInfo}
             onChange={(e) => setExtraInfo(e.target.value)}
+          ></textarea>
+          <h2>Neighbourhood highlights</h2>
+          <p>description of the neighbourhood of the place</p>
+          <textarea
+            rows={3}
+            value={neighbourhood}
+            onChange={(e) => setNeighbourhood(e.target.value)}
           ></textarea>
           <h2>Check in & out times</h2>
           <p>

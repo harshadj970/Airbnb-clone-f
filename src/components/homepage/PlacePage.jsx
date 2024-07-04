@@ -55,10 +55,7 @@ const PlacePage = () => {
               window.scrollTo({ top: 0, behavior: "smooth" });
               setShowAllImage(true);
             }}
-            src={
-              "https://airbnb-clone-backend-b14p.onrender.com/uploads/" +
-              place?.photos?.[0]
-            }
+            src={place?.photos?.[0]}
             alt=""
           />
           <div>
@@ -67,10 +64,7 @@ const PlacePage = () => {
                 window.scrollTo({ top: 0, behavior: "smooth" });
                 setShowAllImage(true);
               }}
-              src={
-                "https://airbnb-clone-backend-b14p.onrender.com/uploads/" +
-                place?.photos?.[1]
-              }
+              src={place?.photos?.[1]}
               alt=""
             />
             <img
@@ -78,10 +72,7 @@ const PlacePage = () => {
                 window.scrollTo({ top: 0, behavior: "smooth" });
                 setShowAllImage(true);
               }}
-              src={
-                "https://airbnb-clone-backend-b14p.onrender.com/uploads/" +
-                place?.photos?.[2]
-              }
+              src={place?.photos?.[2]}
               alt=""
             />
             <p
@@ -139,7 +130,7 @@ const PlacePage = () => {
               <img
                 src={
                   host?.avatar
-                    ? `https://airbnb-clone-backend-b14p.onrender.com/uploads/${host?.avatar}`
+                    ? `${host?.avatar}`
                     : defaultPfp
                 }
                 alt=""
@@ -183,10 +174,7 @@ const PlacePage = () => {
           <div>
             {place?.photos?.map((photo) => {
               return (
-                <img
-                  src={`https://airbnb-clone-backend-b14p.onrender.com/uploads/${photo}`}
-                  alt=""
-                />
+                <img src={photo} alt="" />
               );
             })}
           </div>

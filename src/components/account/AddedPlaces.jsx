@@ -9,7 +9,7 @@ const AddedPlaces = () => {
   const { user } = useContext(UserContext);
   useEffect(() => {
     axios
-      .get("/user-places", { headers: { "Authorization": user.token } })
+      .get("/user-places", { headers: { Authorization: user?.token } })
       .then(({ data }) => setPlaces(data));
   }, []);
   return (
@@ -21,10 +21,7 @@ const AddedPlaces = () => {
               <Link to={"/account/places/" + place._id}>
                 <div className={classes.place}>
                   <img
-                    src={
-                      "https://airbnb-clone-backend-b14p.onrender.com/uploads/" +
-                      place.photos[0]
-                    }
+                    src={place.photos[0]}
                     alt=""
                   />
                   <div className={classes.place_info}>

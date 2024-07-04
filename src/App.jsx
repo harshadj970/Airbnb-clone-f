@@ -11,15 +11,18 @@ import Places from "./components/account/Places";
 import PlacesFormPage from "./components/account/PlacesFormPage";
 import PlacePage from "./components/homepage/PlacePage";
 
-axios.defaults.baseURL = "https://airbnb-clone-backend-b14p.onrender.com";
+axios.defaults.baseURL = "http://localhost:8080";
 axios.defaults.withCredentials = true;
 function App() {
   const { setUser, setReady, user } = useContext(UserContext);
   useEffect(() => {
     axios
-      .get("/profile", { headers: { Authorization: user?.token } })
+      .get("/profile", {
+        headers: { Authorization: document.cookie.replace("token=", "") },
+      })
       .then((res) => setUser(res.data));
     setReady(true);
+    console.log(document.cookie.replace("token=", ""));
   }, []);
 
   return (

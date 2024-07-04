@@ -32,16 +32,9 @@ const PhotoUploader = ({
       <div className={classes.upload}>
         {addedPhotos.length > 0 &&
           addedPhotos.map((link, index) => {
-            // const [mainPhoto, setMainPhoto] = useState(false);
             return (
               <div key={index} className={classes.place_img}>
-                <img
-                  src={
-                    "https://airbnb-clone-backend-b14p.onrender.com/uploads/" +
-                    link
-                  }
-                  alt=""
-                />
+                <img src={link} alt="" />
                 <div
                   className={classes.remove_icon}
                   onClick={() => removePhoto(link)}

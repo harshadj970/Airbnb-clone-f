@@ -45,9 +45,7 @@ const Register = () => {
               <label>
                 <img
                   src={
-                    avatar
-                      ? `https://airbnb-clone-backend-b14p.onrender.com/uploads/${avatar}`
-                      : user
+                    avatar ? `${avatar}` : user
                   }
                   alt=""
                 />

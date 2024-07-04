@@ -24,10 +24,7 @@ const AllPlaces = () => {
               <Link to={"place/" + place._id}>
                 <div className={classes.place}>
                   <img
-                    src={
-                      "https://airbnb-clone-backend-b14p.onrender.com/uploads/" +
-                      place?.photos[0]
-                    }
+                    src={place?.photos[0]}
                     alt=""
                   />
                   <p>{place.address}</p>
