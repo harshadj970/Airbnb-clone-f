@@ -30,7 +30,7 @@ const AllPlaces = () => {
                   <p>{place.address}</p>
                   <p>{place.title}</p>
                   <p>
-                    <span>₹ {place.price}</span> per night
+                    <span>{(place.price).toLocaleString('en-IN',{style:'currency',currency:'INR',minimumFractionDigits:0})}</span> per night
                   </p>
                 </div>
               </Link>
